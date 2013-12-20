@@ -1,0 +1,9 @@
+Commands
+
+1. make 
+2. mpdboot –c -v -n 18 -r rsh -f mpd.hosts –-ncpus=2
+3. mpiexec –machinefile machines –np <n> canon <sqrt(n)> <Array Dimension>
+
+Files are empty but must be configured
+machines
+mpd.hosts
