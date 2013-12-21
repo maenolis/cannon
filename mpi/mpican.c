@@ -152,8 +152,8 @@ int convert_to_int(char *buffer) {
     return -1;
 }
 
-double fRand(int max) {							
-    return rand()/(((double)RAND_MAX + 1) / max);
+double fRand() {							
+    return rand()/(((double)RAND_MAX + 1) / MAX_VALUE_FRAND);
 }
 
 void create_submatrix(int nlocal, int myrank, double **arr, int random) {
@@ -163,7 +163,7 @@ void create_submatrix(int nlocal, int myrank, double **arr, int random) {
 	(*arr) = malloc(size * sizeof(double));
 
 	if(random) 
-		for(i = 0; i < size; i++) { (*arr)[i] = fRand(MAX_VALUE_FRAND); } 
+		for(i = 0; i < size; i++) { (*arr)[i] = fRand(); } 
 	else 
 		for(i = 0; i < size; i++) { (*arr)[i] = 0.00; }
 }
