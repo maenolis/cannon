@@ -216,23 +216,23 @@ void print_array(double ***Arr, int procdim, int nlocal, int dim) {
 	}		
 	printf("Matrix is:\n");
 	for (i = 0; i < procdim; i++) {
-		for(j = 0; j < procdim; j++) { /*2 for gia sarwsh tou pinaka deiktwn*/
-			rowC = i * nlocal;	/*arxikopoihsh upologizontas tous prohgoumenous upopinakes*/
-			columnC = j * nlocal; /*omoiws*/
-			for(k = 0; k < nlocal * nlocal; k++) { /*Sarwsh tou upopinaka ston opoio deixnei o deixths me 8esh (i, j)*/
+		for(j = 0; j < procdim; j++) { 
+			rowC = i * nlocal;	
+			columnC = j * nlocal;
+			for(k = 0; k < nlocal * nlocal; k++) { 
 				finalArray[rowC][columnC] = Arr[i][j][k];
-				if( (k + 1)%(nlocal) == 0) {	/*Ean ftasame sthn teleutaia sthlh*/
-					rowC++; /*Pame sthn apo katw seira*/
-					columnC = j * nlocal;	/*Arxikopoioume ksana tis sthles upologizontas ths prohgoumenes metrhseis*/
+				if( (k + 1)%(nlocal) == 0) {	
+					rowC++; 
+					columnC = j * nlocal;	
 				}				
 				else {
-					columnC++;	/*Alliws pame sthn epomenh sthlh*/
+					columnC++;	
 				}	
 			}
 		}
 	}
 	printf("-------------------------------------------------------\n");
-	for(i = 0; i < dim; i++) {	/*Ektupwsh pinaka A*/
+	for(i = 0; i < dim; i++) {	
 		for(j = 0; j < dim; j++) {
 			printf("%f ", finalArray[i][j]);
 		}
